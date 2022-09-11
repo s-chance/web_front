@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-层级选择器</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        //body内所有div改变背景色
+        $(function () {
+            $("#b1").click(function () {
+                $("body div").css("backgroundColor", "green");
+            });
+            //body内子div(一级div,不包括二级div,即示例中的嵌套div)改变背景色
+            $("#b2").click(function () {
+                $("body > div").css("backgroundColor", "pink");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>div1..</div>
+    <div>div2..</div>
+    <span>
+        <div>div-son</div>
+    </span>
+    <input type="button" id="b1" value="body内所有div改变背景色">
+    <input type="button" id="b2" value="body内子div改变背景色">
+</body>
+</html>

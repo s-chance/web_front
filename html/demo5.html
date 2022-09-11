@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-入口函数</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        //原生js入口函数
+        // window.onload = function () {
+        //     document.getElementById("b1").onclick = function () {
+        //         alert("原生js");
+        //     }
+        // }
+
+        //jq入口函数
+        $(function () {
+            $("#b1").click(function () {
+                alert("jq");
+            });
+        });
+
+        //js如果存在多个入口函数前面会被后面的覆盖而不执行
+        // function fun1 () {
+        //     alert("js111");
+        // };
+        // function fun2 () {
+        //     alert("js222");
+        // };
+        // window.onload = fun1;
+        // window.onload = fun2;
+
+        //jq可以存在多个入口函数,从上往下依次执行而不会覆盖
+        $(function () {
+            alert("jq333");
+        });
+        $(function () {
+            alert("jq444");
+        });
+    </script>
+</head>
+<body>
+    <div id="box1">div1..</div>
+    <div id="box2">div2..</div>
+    <input type="button" value="click me" id="b1">
+</body>
+</html>

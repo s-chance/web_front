@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>图片选择</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <style type="text/css">
+    *{margin: 0;padding: 0;list-style: none;}
+
+    .emoji{margin:50px;}
+    ul{overflow: hidden;}
+    li{float: left;width: 48px;height: 48px;cursor: pointer;}
+    .emoji img{ cursor: pointer; }
+    </style>
+    <script>
+        //需求：点击qq表情，将其追加到发言框中
+        $(function () {
+            // 1、给所有的 img 设置点击事件
+            $("ul img").click(function () {
+                // 2、将选择的 img 追加到 <p> 标签
+                $(".word").append($(this).clone());
+            })
+        })
+    </script>
+    
+</head>
+<body>
+    <div class="emoji">
+        <ul>
+            <li><img src="../img/photo01.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo02.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo03.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo04.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo05.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo06.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo07.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo08.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo09.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo10.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo11.png" height="22" width="22" alt="" /></li>
+            <li><img src="../img/photo12.png" height="22" width="22" alt="" /></li>
+        </ul>
+        <p class="word">
+            <strong>图片集：</strong>
+            <img src="../img/photo20.png" height="22" width="22" alt="" />
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-基本选择器</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //id为one的元素改变背景色
+            $("#b1").click(function () {
+                $("#one").css("backgroundColor", "green");
+            });
+            //class为ax的元素改变背景色
+            $("#b2").click(function () {
+                $(".ax").css("backgroundColor", "pink");
+            });
+            //tag为div的元素改变背景色
+            $("#b3").click(function () {
+                $("div").css("backgroundColor", "grey");
+            });
+            //tag为span或id为one的元素改变背景色
+            $("#b4").click(function () {
+                $("span,#one").css("backgroundColor", "red");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="one">div-id:one</div>
+    <div class="ax">div-class:ax</div>
+    <div class="ax">div-class2:ax</div>
+    <span>span1..</span>
+    <span>span2..</span><br>
+    <input type="button" id="b1" value="id为one的元素改变背景色"><br>
+    <input type="button" id="b2" value="class为ax的元素改变背景色"><br>
+    <input type="button" id="b3" value="tag为div的元素改变背景色"><br>
+    <input type="button" id="b4" value="tag为span或id为one的元素改变背景色"><br>
+</body>
+</html>

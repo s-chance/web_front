@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-过滤器选择器</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //第一个div元素改变背景色
+            $("#b1").click(function () {
+                $("div:first").css("backgroundColor", "grey");
+            });
+            //最后一个div元素改变背景色
+            $("#b2").click(function () {
+                $("div:last").css("backgroundColor", "orange");
+            });
+            //class值不为one的所有div改变背景色
+            $("#b3").click(function () {
+                $("div:not(.one)").css("backgroundColor", "yellow");
+            });
+            //索引值为偶数的div改变背景色
+            $("#b4").click(function () {
+                $("div:even").css("backgroundColor", "SpringGreen");
+            });
+            //索引值为奇数的div改变背景色
+            $("#b5").click(function () {
+                $("div:odd").css("backgroundColor", "blue");
+            });
+            //索引值大于3的div改变背景色
+            $("#b6").click(function () {
+                $("div:gt(3)").css("backgroundColor", "pink");
+            });
+            //索引值为3的div改变背景色
+            $("#b7").click(function () {
+                $("div:eq(3)").css("backgroundColor", "RosyBrown")
+            });
+            //索引值小于3的div改变背景色
+            $("#b8").click(function () {
+                $("div:lt(3)").css("backgroundColor", "olive");
+            });
+            //所有标题元素改变背景色
+            $("#b9").click(function () {
+                $(":header").css("backgroundColor", "slateBlue")
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>一级标题</h1>
+    <h2>二级标题</h2>
+    <h3>三级标题</h3>
+    <div>div1..</div>
+    <div class="one">div2..</div>
+    <div class="one">div3..</div>
+    <div>div3..</div>
+    <div>div4..</div>
+    <div>div5..</div>
+    <div>div6..</div>
+    <div>div7..</div>
+    <div>div8..</div>
+    <div>div9..</div>
+    <input type="button" id="b1" value="第一个div元素改变背景色"><br>
+    <input type="button" id="b2" value="最后一个div元素改变背景色"><br>
+    <input type="button" id="b3" value="class值不为one的所有div改变背景色"><br>
+    <input type="button" id="b4" value="索引值为偶数的div改变背景色"><br>
+    <input type="button" id="b5" value="索引值为奇数的div改变背景色"><br>
+    <input type="button" id="b6" value="索引值大于3的div改变背景色"><br>
+    <input type="button" id="b7" value="索引值为3的div改变背景色"><br>
+    <input type="button" id="b8" value="索引值小于3的div改变背景色"><br>
+    <input type="button" id="b9" value="所有标题元素改变背景色"><br>
+</body>
+</html>

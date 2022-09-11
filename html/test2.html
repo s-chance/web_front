@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>批量选择</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            //全选
+            $("#selectAll").click(function () {
+                //原理: 使用属性选择器
+                $("input[type=checkbox]").prop("checked", true);
+            });
+
+            //取消全选
+            $("#selectNone").click(function () {
+                $("input[type=checkbox]").prop("checked", false);
+            });
+
+            //反向选择
+            $("#reverse").click(function () {
+                var item = $(".item");
+                //使用容器的each方法
+                item.each(function () {
+                    var prop = $(this).prop("checked");
+                    $(this).prop("checked", !prop);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="tab1" border="1" width="800" align="center">
+        <tr>
+            <th style="text-align: center">
+                <input style="background:lightgreen" id="selectAll" type="button" value="全选">
+                <input style="background:lightgreen" id="selectNone" type="button" value="全不选">
+                <input style="background:lightgreen" id="reverse" type="button" value="反选">
+            </th>
+    
+            <th>分类ID</th>
+            <th>分类名称</th>
+            <th>分类描述</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>1</td>
+            <td>手机数码</td>
+            <td>手机数码类商品</td>
+            <td><a href="">修改</a>|<a href="">删除</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>2</td>
+            <td>电脑办公</td>
+            <td>电脑办公类商品</td>
+            <td><a href="">修改</a>|<a href="">删除</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>3</td>
+            <td>鞋靴箱包</td>
+            <td>鞋靴箱包类商品</td>
+            <td><a href="">修改</a>|<a href="">删除</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>4</td>
+            <td>家居饰品</td>
+            <td>家居饰品类商品</td>
+            <td><a href="">修改</a>|<a href="">删除</a></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="item"></td>
+            <td>5</td>
+            <td>日用百货</td>
+            <td>烟酒糖茶类商品</td>
+            <td><a href="">修改</a>|<a href="">删除</a></td>
+        </tr>
+    </table>
+</body>
+</html>

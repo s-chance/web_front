@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-CRUD操作</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#b1").click(function () {
+                //append(): 将目标对象添加到指定对象内部的末尾
+                //city是指定对象, country是目标对象
+                $("#city").append($("#country"));
+            });
+            $("#b2").click(function () {
+                //appendTo(): 将目标对象添加到指定对象内部的末尾
+                //country是指定对象, city是目标对象
+                $("#city").appendTo($("#country"));
+            });
+            $("#b3").click(function () {
+                //prepend(): 将目标对象添加到指定对象内部的开头
+                //city是指定对象, country是目标对象
+                $("#city").prepend($("#country"));
+            });
+            $("#b4").click(function () {
+                //prependTo(): 将目标对象添加到指定对象内部的开头
+                //country是指定对象, city是目标对象
+                $("#city").prependTo($("#country"));
+            });
+            $("#b5").click(function () {
+                //after(): 将目标对象添加到指定对象的后面
+                //city是指定对象, country是目标对象
+                $("#city").after($("#country"));
+            });
+            $("#b6").click(function () {
+                //insertAfter(): 将目标对象添加到指定对象的后面
+                //country是指定对象, city是目标对象
+                $("#city").insertAfter($("#country"));
+            });
+            $("#b7").click(function () {
+                //before(): 将目标对象添加到指定对象的前面
+                //city是指定对象, country是目标对象
+                $("#city").before($("#country"));
+            });
+            $("#b8").click(function () {
+                //insertBefore(): 将目标对象添加到指定对象的前面
+                //country是指定对象, city是目标对象
+                $("#city").insertBefore($("#country"));
+            });    
+        });
+    </script>
+</head>
+<body>
+    <div id="country">country</div>
+    <div id="city">city</div>
+    <input type="button" id="b1" value="append"><br>
+    <input type="button" id="b2" value="appendTo"><br>
+    <input type="button" id="b3" value="prepend"><br>
+    <input type="button" id="b4" value="prependTo"><br>
+    <input type="button" id="b5" value="after"><br>
+    <input type="button" id="b6" value="insertAfter"><br>
+    <input type="button" id="b7" value="before"><br>
+    <input type="button" id="b8" value="insertBefore"><br>
+</body>
+</html>

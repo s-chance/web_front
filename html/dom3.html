@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-class属性操作</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            //增加class属性改变样式(prop)
+            //prop会直接覆盖属性值
+            $("#b1").click(function () {
+                $("#one").prop("class", "second");
+            });
+            //增加class属性值改变样式(addClass)
+            //addClass不会覆盖原本的属性值, 而是会添加到属性值末尾
+            $("#b2").click(function () {
+                $("#one").addClass("third");
+            });
+            //删除class属性值移除样式
+            $("#b3").click(function () {
+                $("#one").removeClass("second");
+            });
+            //反复增加或删除指定的class属性值变更样式
+            $("#b4").click(function () {
+                $("#one").toggleClass("second");
+            });
+            // //通过css获取背景色
+            // $("#b5").click(function () {
+            //     var bgColor = $("#one").css("backgroundColor");
+            //     alert(bgColor);
+            // });
+            // //通过css设置背景色
+            // $("#b6").click(function () {
+            //     $("#one").css("backgroundColor", "Springgreen");
+            // });
+        });
+    </script>
+    <style>
+        .second {
+            background-color: deepskyblue;
+        }
+        .third {
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">this is a div..</div>
+    <input type="button" id="b1" value="增加class属性改变样式(prop)"><br>
+    <input type="button" id="b2" value="增加class属性值改变样式(addClass)"><br>
+    <input type="button" id="b3" value="删除class属性值移除样式"><br>
+    <input type="button" id="b4" value="反复增加或删除指定的class属性值变更样式"><br>
+    <!-- <input type="button" id="b5" value="通过css获取背景色"><br>
+    <input type="button" id="b6" value="通过css设置背景色"><br> -->
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>02-通用属性操作</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            //获取节点的name属性
+            var name = $("#ax").attr("name");
+            alert(name);
+
+            //设置节点的name属性
+            $("#ax").attr("name", "update");
+            
+            //新增节点属性
+            $("#ax").attr("style", "color: springGreen;");
+            
+            //删除节点属性
+            $("#tx").removeAttr("style");
+
+            //获取checkbox的选中状态
+            var checked = $("#hobby").prop("checked");
+            alert(checked);
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="ax" name="abc">first</li>
+        <li id="tx" name="efg" style="color: pink;">second</li>
+    </ul>
+    <input type="checkbox" id="hobby" checked>drink
+</body>
+</html>

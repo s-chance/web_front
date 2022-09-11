@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>04-绑定事件</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="box1">div1..</div>
+    <div id="box2">div2..</div>
+    <input type="button" value="click me" id="b1">
+</body>
+<script>
+    //给按钮b1绑定鼠标单击事件
+    $("#b1").click(function () {
+        alert("abc");
+    });
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>06-样式控制</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#box1").css("backgroundColor", "grey");
+            $("#box2").css("backgroundColor", "grey");
+            $("#b1").click(function () {
+                 $("#box1").css("backgroundColor", "red");
+                 $("#box2").css("backgroundColor", "pink");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box1">div1..</div>
+    <div id="box2">div2..</div>
+    <input type="button" value="change color" id="b1">
+</body>
+</html>

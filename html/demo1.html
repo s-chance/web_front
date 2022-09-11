@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>01-自定义js框架</title>
+    <script src="../js/itcast.js"></script>
+</head>
+
+<body>
+    <div id="box1">div1...</div>
+    <div id="box2">div2...</div>
+</body>
+
+<script>
+    //原生代码
+    var div1 = document.getElementById("box1");
+    var div2 = document.getElementById("box2");
+    //利用引入的js文件
+    //简化
+    // var div1 = get("box1");
+    // var div2 = get("box2")
+    //二次简化
+    var div1 = $("box1");
+    var div2 = $("box2");
+    alert(div1.innerHTML);
+    alert(div2.innerHTML);
+</script>
+</html>

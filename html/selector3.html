@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>03-属性选择器</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //包含title属性的div改变背景色
+            $("#b1").click(function () {
+                $("div[title]").css("backgroundColor", "pink");
+            });
+            //title属性值为test的div改变背景色
+            $("#b2").click(function () {
+                $("div[title='test']").css("backgroundColor", "brown");
+            });
+            //title值不为test的所有div元素(包括没有title属性的div元素)改变背景色
+            $("#b3").click(function () {
+                $("div[title!='test']").css("backgroundColor", "grey");
+            });
+            //title值开头为te的div元素改变背景色
+            $("#b4").click(function () {
+                $("div[title^='te']").css("backgroundColor", "orange");
+            });
+            //title值结尾为st的div元素改变背景色
+            $("#b5").click(function () {
+                $("div[title$='st']").css("backgroundColor", "yellow");
+            });
+            //title值包含es的div元素改变背景色
+            $("#b6").click(function () {
+                $("div[title*='es']").css("backgroundColor", "purple");
+            });
+            //title值包含es且具有id属性的div元素改变背景色
+            $("#b7").click(function () {
+                $("div[id][title*='es']").css("backgroundColor", "red");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>无title</div>
+    <div title="">有title</div>
+    <div title="test">title test</div>
+    <div title="teno">title teno</div>
+    <div title="nost">title nost</div>
+    <div title="noesno">title noesno</div>
+    <div title="es" id="box">title es id box</div>
+    <input type="button" id="b1" value="包含title属性的div改变背景色"><br>
+    <input type="button" id="b2" value="title属性值为test的div改变背景色"><br>
+    <input type="button" id="b3" value="title值不为test的所有div元素(包括没有title属性的div元素)改变背景色"><br>
+    <input type="button" id="b4" value="title值开头为te的div元素改变背景色"><br>
+    <input type="button" id="b5" value="title值结尾为st的div元素改变背景色"><br>
+    <input type="button" id="b6" value="title值包含es的div元素改变背景色"><br>
+    <input type="button" id="b7" value="title值包含es且具有id属性的div元素改变背景色"><br>
+</body>
+</html>

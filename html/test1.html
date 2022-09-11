@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("tr:gt(0):odd").css("backgroundColor", "pink");
+
+            $("tr:gt(0):even").css("backgroundColor", "springgreen");
+        });
+    </script>
+</head>
+<body>
+    <table border="1" align="center">
+        <tr>
+            <th>title</th>
+            <th>author</th>
+            <th>year</th>
+        </tr>
+        <tr>
+            <td>a</td>
+            <td>1</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>b</td>
+            <td>2</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>c</td>
+            <td>3</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>d</td>
+            <td>4</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+    </table>
+</body>
+</html>

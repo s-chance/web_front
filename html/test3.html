@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>左右选择</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#toRight").click(function () {
+                $("#rightData").append($("#leftData > option:selected"));
+            });
+
+            $("#toLeft").click(function () {
+                $("#rightData > option:selected").appendTo($("#leftData"));
+            });
+        });
+    </script>
+    <style>
+        #leftData,#btn,#rightData{
+            float: left;
+            width: 100px;
+            height: 300px;
+        }
+        #toRight,#toLeft{
+            margin-top:100px ;
+            margin-left:30px;
+            width: 50px;
+        }
+
+        .border{
+            height: 500px;
+            padding: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="border">
+        <select id="leftData" multiple>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+    
+        <div id="btn">
+            <input type="button" id="toRight" value="-->"><br>
+            <input type="button" id="toLeft" value="<--">
+        </div>
+    
+        <select id="rightData" multiple>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>0</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+</body>
+</html>

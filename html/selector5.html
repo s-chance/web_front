@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>05-表单属性选择器</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //使用val()方法改变可输入input的值
+            $("#b1").click(function () {
+                $("input[type='text']:enabled").val("aaa");
+            });
+            //使用val()方法改变不可输入input的值
+            $("#b2").click(function () {
+                $("input[type='text']:disabled").val("bbb");
+            });
+            //利用length属性获取复选框选中的个数
+            $("#b3").click(function () {
+                alert("复选框选中的个数:"+$("input[type='checkbox']:checked").length)
+            });
+            //获取下拉框选中的值
+            $("#b4").click(function () {
+                alert("下拉框的值:"+$("#num > option:selected").val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <form align="center">
+        <input type="text" value="可输入input"><br>
+        <input type="text" value="不可输入input" disabled><br>
+        <input type="checkbox" value="1">1
+        <input type="checkbox" value="2">2
+        <input type="checkbox" value="3">3<br>
+        <select id="num">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <br>
+        <input type="button" id="b1" value="使用val()方法改变可输入input的值"><br>
+        <input type="button" id="b2" value="使用val()方法改变不可输入input的值"><br>
+        <input type="button" id="b3" value="利用length属性获取复选框选中的个数"><br>
+        <input type="button" id="b4" value="获取下拉框选中的值"><br>
+    </form>
+</body>
+</html>
