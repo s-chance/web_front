@@ -6,7 +6,7 @@
    2. [jq的基本使用](html/demo2.html)
    3. [jq与js对象的转换](html/demo3.html):star:
    4. [绑定事件](html/demo4.html)
-   5. [js、jq入口函数对比](html/demo5.html)
+   5. [js、jq入口函数对比](html/demo5.html)(入口函数在所有html、css渲染完后执行)
    6. [样式控制](html/demo6.html)
 ## jQuery选择器篇
    1. [基本选择器](html/selector1.html)
@@ -44,3 +44,13 @@
 2. [批量选择](html/test2.html)
 3. ["左右选择"](html/test3.html)
 4. [图片选择](html/test4.html)
+5. [随机切换图片](html/test5.html)
+---
+## jQuery动画篇
+1. [显示与隐藏元素](html/animation1.html)
+2. [简单案例](html/animation2.html)
+## jQuery遍历篇
+1. [遍历方式](html/traverse1.html)
+## jQuery事件篇
+1. [事件绑定与解除](html/event1.html)
+2. [事件切换](html/event2.html)
