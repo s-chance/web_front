@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>随机切换图片</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            //定义数组存放图片
+            var imgs = [
+                "../img/photo11.png",
+                "../img/photo12.png",
+                "../img/photo13.png",
+                "../img/photo14.png",
+                "../img/photo15.png",
+                "../img/photo16.png",
+                "../img/photo17.png",
+                "../img/photo18.png",
+                "../img/photo19.png",
+                "../img/photo20.png"
+            ];
+
+            //定义计数器
+            var count = 0;
+            //定义计时器
+            var time = null;
+
+            //定义图片路径
+            imgLocation = "";
+            
+            //绑定start按钮点击事件
+            $("#start").click(function () {
+                //为防止连续点击, 按下start按钮后禁用按钮
+                $("#start").prop("disabled", true);
+                //为暂停切换, 同时重新启用start按钮, 设置stop按钮
+                $("#stop").prop("disabled", false);
+
+                //定时器循环图片
+                time = setInterval(function () {
+                    var index = count % imgs.length;
+                    imgLocation = imgs[index];
+                    $("#target_s").prop("src", imgLocation);
+                    //计数器自增
+                    count++;
+                }, 10);
+            });
+
+            //大图显示
+            //绑定stop按钮点击事件
+            $("#stop").click(function () {
+                //关闭定时器
+                clearInterval(time);
+
+                //重新启用start按钮
+                $("#start").prop("disabled", false);
+                //再禁用stop按钮
+                $("#stop").prop("disabled", true);
+
+                //显示大图
+                $("#target_b").prop("src", imgLocation);
+            });
+        });
+    </script>  
+</head>
+<body>
+    <!-- 小图 -->
+    <div style="background-color:red;border: dotted; height: 50px; width: 50px">
+        <img src="../img/photo20.png" id="target_s" style="width: 50px; height: 50px;">
+    </div>
+    <!-- 大图 -->
+    <div style="border: double ;width: 400px; height: 400px; position: absolute; left: 500px; top:10px">
+        <img src="../img/photo20.png" id="target_b" style="width: 400px; height: 400px;">
+    </div>
+    
+    <!-- 开始和结束按钮 -->
+    <input id="start" type="button" style="width: 150px;height: 150px; font-size: 20px" value="开始">
+    <input id="stop" type="button" style="width: 150px;height: 150px; font-size: 20px" value="停止">
+    </body>
+</html>

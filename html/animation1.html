@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>显示与隐藏元素</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        //隐藏
+        function hide() {
+            //slow慢速  fast快速  或直接使用数字指定速度
+            $("#div1").hide("slow", "swing", function () {
+                // alert("hidden");
+            });
+        };
+
+        //显示
+        function show() {
+            $("#div1").show("slow", "swing", function () {
+                // alert("show");
+            });
+        };
+
+        //切换显示隐藏
+        function toggle() {
+            $("#div1").toggle("fast");
+        };
+
+
+        //滑动隐藏
+        function slideHide() {
+            $("#div1").slideUp("slow");
+        };
+
+        //滑动显示
+        function slideShow() {
+            $("#div1").slideDown("slow");
+        };
+
+        //滑动切换
+        function slideToggle() {
+            $("#div1").slideToggle("slow");
+        };
+
+
+        //淡入淡出隐藏
+        function fadeHide() {
+            $("#div1").fadeOut("slow");
+        };
+
+        //淡入淡出显示
+        function fadeShow() {
+            $("#div1").fadeIn("slow");
+        };
+
+        //淡入淡出切换
+        function fadeToggle() {
+            $("#div1").fadeToggle("slow");
+        };
+    </script>
+</head>
+<body>
+    <input type="button" value="hide" onclick="hide()">
+    <input type="button" value="show" onclick="show()">
+    <input type="button" value="toggle" onclick="toggle()">
+    <br>
+    <input type="button" value="slideHide" onclick="slideHide()">
+    <input type="button" value="slideShow" onclick="slideShow()">
+    <input type="button" value="slideToggle" onclick="slideToggle()">
+    <br>
+    <input type="button" value="fadeHide" onclick="fadeHide()">
+    <input type="button" value="fadeShow" onclick="fadeShow()">
+    <input type="button" value="fadeToggle" onclick="fadeToggle()">
+    <div id="div1" style="width:300px;height:300px;background:springgreen">
+        this is div1..
+    </div>
+</body>
+</html>

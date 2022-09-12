@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>遍历</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            //原生js遍历
+            $("#b1").click(function () {
+                let cities = $("#city li");
+                for (var i = 0; i < cities.length; i++) {
+                    if("a" === cities[i].innerHTML) {
+                        continue;
+                    }
+                    alert(i + ":" + cities[i].innerHTML);
+                }
+            });
+
+            //jQuery each遍历
+            $("#b2").click(function () {
+                let cities = $("#city li");
+                cities.each(function () {
+                    // alert(this.innerHTML);
+                    alert($(this).html());
+                });
+            });
+
+            //jQuery each遍历增强
+            $("#b3").click(function () {
+                let cities = $("#city li");
+                cities.each(function (index, element) {
+                    // alert(index + ":" + element.innerHTML);
+                    // alert(index + ":" + $(element).html());
+                    if("c" === $(element).html()) {
+                        //返回true跳过本次循环
+                        // return true;
+                        //返回false直接结束本次以及后面的循环
+                        return false;
+                    }
+                    alert(index + ":" + $(element).html());
+                });
+            });
+
+            //jQuery $.each遍历
+            $("#b4").click(function () {
+                let cities = $("#city li");
+                $.each(cities, function () {
+                    alert($(this).html());
+                });
+            });
+
+            //jQuery3.0版本以上  for of
+            $("#b5").click(function () {
+                let cities = $("#city li");
+                for (li of cities) {
+                    alert($(li).html());
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="city">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+    </ul>
+
+    <input type="button" id="b1" value="js遍历">
+    <input type="button" id="b2" value="jQ each遍历">
+    <input type="button" id="b3" value="jQ each遍历增强">
+    <input type="button" id="b4" value="jQ $.each遍历">
+    <input type="button" id="b5" value="jQ of遍历">
+</body>
+</html>

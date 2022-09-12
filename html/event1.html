@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定与解除</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            //on: 绑定指定的事件
+            $("#b1").on("click", function () {
+                alert("事件已绑定");
+            });
+
+            //off: 解除事件
+            $("#b2").click(function () {
+                $("#b1").off("click");
+                //如果不填参数, 则解除所有绑定在b1上的事件
+                // $("#b1").off();
+
+                alert("已解除事件");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="b1" value="on">
+    <input type="button" id="b2" value="off">
+</body>
+</html>
